@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux'; // Importa useDispatch para Redux
+// ¡Importa useDispatch Y useSelector aquí!
+import { useDispatch, useSelector } from 'react-redux'; 
 import { addItem } from '../features/cart/cartSlice'; // Importa la acción addItem desde tu slice de carrito
 
 import './ProductList.css'; // Asegúrate de que este archivo CSS exista
@@ -17,6 +18,10 @@ function ProductList({ onHomeClick }) {
 
     // Hook useDispatch de React-Redux para despachar acciones
     const dispatch = useDispatch();
+
+    // **¡NUEVA LÍNEA AQUÍ!** Accede al totalItems del carrito desde Redux
+    const totalItemsInCart = useSelector((state) => state.cart.totalItems);
+
 
     // Tu arreglo de plantas, anidado por categorías
     const plantsArray = [
