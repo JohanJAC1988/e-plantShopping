@@ -1,1 +1,1 @@
-# coding-project-template
+Proyecto Final: Aplicación comercial Paradise Nursery.
